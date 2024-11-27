@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación del Potencial del Colaborador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .scale label {
+            flex: 1;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .interpretation {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        .interpretation th, .interpretation td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .interpretation th {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evaluación del Potencial del Colaborador</h1>
+    <p>Evalúa al colaborador utilizando una escala progresiva de 1 a 5:</p>
+    <ul>
+        <li>1: Nunca</li>
+        <li>2: Raramente</li>
+        <li>3: A veces</li>
+        <li>4: Frecuentemente</li>
+        <li>5: Siempre</li>
+    </ul>
+    <form id="evaluationForm">
+        <!-- Desempeño Actual -->
+        <div class="question">
+            <h2>Desempeño Actual</h2>
+            <label>1. ¿Cumple consistentemente con los objetivos establecidos?</label>
+            <div class="scale">
+                <label><input type="radio" name="desempeno1" value="1" required> 1</label>
+                <label><input type="radio" name="desempeno1" value="2"> 2</label>
+                <label><input type="radio" name="desempeno1" value="3"> 3</label>
+                <label><input type="radio" name="desempeno1" value="4"> 4</label>
+                <label><input type="radio" name="desempeno1" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>2. ¿Entrega resultados con alta calidad?</label>
+            <div class="scale">
+                <label><input type="radio" name="desempeno2" value="1" required> 1</label>
+                <label><input type="radio" name="desempeno2" value="2"> 2</label>
+                <label><input type="radio" name="desempeno2" value="3"> 3</label>
+                <label><input type="radio" name="desempeno2" value="4"> 4</label>
+                <label><input type="radio" name="desempeno2" value="5"> 5</label>
+            </div>
+        </div>
+
+        <!-- Adaptabilidad -->
+        <div class="question">
+            <h2>Adaptabilidad</h2>
+            <label>3. ¿Responde eficazmente a cambios inesperados?</label>
+            <div class="scale">
+                <label><input type="radio" name="adaptabilidad1" value="1" required> 1</label>
+                <label><input type="radio" name="adaptabilidad1" value="2"> 2</label>
+                <label><input type="radio" name="adaptabilidad1" value="3"> 3</label>
+                <label><input type="radio" name="adaptabilidad1" value="4"> 4</label>
+                <label><input type="radio" name="adaptabilidad1" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>4. ¿Es resiliente frente a la presión o las críticas?</label>
+            <div class="scale">
+                <label><input type="radio" name="adaptabilidad2" value="1" required> 1</label>
+                <label><input type="radio" name="adaptabilidad2" value="2"> 2</label>
+                <label><input type="radio" name="adaptabilidad2" value="3"> 3</label>
+                <label><input type="radio" name="adaptabilidad2" value="4"> 4</label>
+                <label><input type="radio" name="adaptabilidad2" value="5"> 5</label>
+            </div>
+        </div>
+
+        <!-- Proactividad y Aprendizaje -->
+        <div class="question">
+            <h2>Proactividad y Aprendizaje</h2>
+            <label>5. ¿Busca nuevas responsabilidades o toma iniciativa?</label>
+            <div class="scale">
+                <label><input type="radio" name="proactividad1" value="1" required> 1</label>
+                <label><input type="radio" name="proactividad1" value="2"> 2</label>
+                <label><input type="radio" name="proactividad1" value="3"> 3</label>
+                <label><input type="radio" name="proactividad1" value="4"> 4</label>
+                <label><input type="radio" name="proactividad1" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>6. ¿Demuestra interés por aprender, lo hace rápido y aplica lo aprendido?</label>
+            <div class="scale">
+                <label><input type="radio" name="proactividad2" value="1" required> 1</label>
+                <label><input type="radio" name="proactividad2" value="2"> 2</label>
+                <label><input type="radio" name="proactividad2" value="3"> 3</label>
+                <label><input type="radio" name="proactividad2" value="4"> 4</label>
+                <label><input type="radio" name="proactividad2" value="5"> 5</label>
+            </div>
+        </div>
+
+        <!-- Habilidades Interpersonales -->
+        <div class="question">
+            <h2>Habilidades Interpersonales</h2>
+            <label>7. ¿Fomenta relaciones positivas dentro del equipo?</label>
+            <div class="scale">
+                <label><input type="radio" name="interpersonales1" value="1" required> 1</label>
+                <label><input type="radio" name="interpersonales1" value="2"> 2</label>
+                <label><input type="radio" name="interpersonales1" value="3"> 3</label>
+                <label><input type="radio" name="interpersonales1" value="4"> 4</label>
+                <label><input type="radio" name="interpersonales1" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>8. ¿Se comunica de manera clara y efectiva?</label>
+            <div class="scale">
+                <label><input type="radio" name="interpersonales2" value="1" required> 1</label>
+                <label><input type="radio" name="interpersonales2" value="2"> 2</label>
+                <label><input type="radio" name="interpersonales2" value="3"> 3</label>
+                <label><input type="radio" name="interpersonales2" value="4"> 4</label>
+                <label><input type="radio" name="interpersonales2" value="5"> 5</label>
+            </div>
+        </div>
+
+        <!-- Potencial de Liderazgo -->
+        <div class="question">
+            <h2>Potencial de Liderazgo</h2>
+            <label>9. ¿Muestra capacidad de planificar a futuro?</label>
+            <div class="scale">
+                <label><input type="radio" name="liderazgo1" value="1" required> 1</label>
+                <label><input type="radio" name="liderazgo1" value="2"> 2</label>
+                <label><input type="radio" name="liderazgo1" value="3"> 3</label>
+                <label><input type="radio" name="liderazgo1" value="4"> 4</label>
+                <label><input type="radio" name="liderazgo1" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>10. ¿Gestiona bien sus emociones?</label>
+            <div class="scale">
+                <label><input type="radio" name="liderazgo2" value="1" required> 1</label>
+                <label><input type="radio" name="liderazgo2" value="2"> 2</label>
+                <label><input type="radio" name="liderazgo2" value="3"> 3</label>
+                <label><input type="radio" name="liderazgo2" value="4"> 4</label>
+                <label><input type="radio" name="liderazgo2" value="5"> 5</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Calcular Puntuación</button>
+        <div class="result" id="result"></div>
+
+        <table class="interpretation">
+            <thead>
+                <tr>
+                    <th>Rango de Puntuación</th>
+                    <th>Interpretación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.0 - 2.0</td>
+                    <td>Bajo potencial de desarrollo</td>
+                </tr>
+                <tr>
+                    <td>2.1 - 3.0</td>
+                    <td>Potencial de desarrollo moderado</td>
+                </tr>
+                <tr>
+                    <td>3.1 - 4.0</td>
+                    <td>Potencial de desarrollo alto</td>
+                </tr>
+                <tr>
+                    <td>4.1 - 5.0</td>
+                    <td>Muy alto potencial de desarrollo</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        function calculateScore() {
+            const form = document.getElementById("evaluationForm");
+            const formData = new FormData(form);
+            let total = 0;
+            let count = 0;
+
+            for (let value of formData.values()) {
+                total += parseInt(value);
+                count++;
+            }
+
+            const average = total / count;
+            const resultDiv = document.getElementById("result");
+            let interpretation = "";
+
+            if (average <= 2) {
+                interpretation = "Bajo potencial de desarrollo";
+            } else if (average <= 3) {
+                interpretation = "Potencial de desarrollo moderado";
+            } else if (average <= 4) {
+                interpretation = "Potencial de desarrollo alto";
+            } else {
+                interpretation = "Muy alto potencial de desarrollo";
+            }
+
+            resultDiv.textContent = `Puntuación promedio del colaborador: ${average.toFixed(2)} (${interpretation})`;
+        }
+    </script>
+</body>
+</html>
